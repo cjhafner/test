@@ -1,0 +1,19 @@
+---
+-
+ 
+  tasks:
+    -
+      name: "Update Centos"
+      remote_user: root
+      yum:
+        name: "*"
+        state: latest
+-
+  remote_user: root
+  tasks:
+    -
+       async: 0
+       command: "/sbin/shutdown -r +1"
+       ignore_errors: true
+       name: "Restart server"
+       poll: 0
